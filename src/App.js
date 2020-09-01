@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Header from "./components/Header/Header";
+import Mealtime from "./components/Mealtime";
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,6 +26,7 @@ const App = () => {
     <AppContainer>
       <ThemeProvider theme={theme}>
         <Header />
+        <Mealtime />
       </ThemeProvider>
     </AppContainer>
   );

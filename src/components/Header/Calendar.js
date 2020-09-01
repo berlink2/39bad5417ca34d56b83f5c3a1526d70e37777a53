@@ -20,7 +20,7 @@ const Button = styled.button`
   background-color: white;
   min-height: 64px;
   min-width: 64px;
-  text-decoration: none;
+
   border: none;
   cursor: pointer;
 
@@ -89,16 +89,12 @@ const Dates = [
 const Calendar = () => {
   const [clickedDate, setClickedDate] = useState(3);
 
-  const clickDate = (id) => {
-    if (clickedDate !== id) setClickedDate(id);
-  };
-
   function RenderDate({ id, day, date, active }) {
     return (
       <Button
         disabled={day === "SAB" || day === "MIN"}
         active={active}
-        onClick={() => clickDate(id)}
+        onClick={() => setClickedDate(() => id)}
       >
         <DayContainer>{day}</DayContainer>
         <DateContainer>{date}</DateContainer>
