@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
+import Header from "./components/Header/Header";
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  box-shadow: 0px 8px 10px 0px rgba(10, 31, 68, 0.1);
+`;
 
-function App() {
+const theme = {
+  red: "#f9234a",
+  scarlet: "#a23530",
+  gray4: "#424749",
+  gray3: "#6e7679",
+  gray2: "#e2e4e4",
+  gray1: "#f1f1f2",
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <ThemeProvider theme={theme}>
+        <Header />
+      </ThemeProvider>
+    </AppContainer>
   );
-}
+};
 
 export default App;
