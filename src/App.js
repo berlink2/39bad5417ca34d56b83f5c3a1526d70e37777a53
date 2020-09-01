@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Header from "./components/Header/Header";
 import Mealtime from "./components/Mealtime";
 import ItemList from "./components/Items/ItemList";
+import Cart from "./components/Cart";
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,21 +23,16 @@ const theme = {
   gray1: "#f1f1f2",
 };
 
-// const ItemList = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   max-width: 375px;
-//   width: 100%;
-//   margin: auto;
-// `;
-
 const App = () => {
+  const [showCart, setShowCart] = useState(false);
+
   return (
     <AppContainer>
       <ThemeProvider theme={theme}>
         <Header />
         <Mealtime />
-        <ItemList />
+        <ItemList setShowCart={setShowCart} />
+        {showCart ? <Cart /> : null}
       </ThemeProvider>
     </AppContainer>
   );

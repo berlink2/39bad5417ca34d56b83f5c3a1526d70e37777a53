@@ -96,9 +96,14 @@ const AddButton = styled.button`
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
+
+  .addButton {
+    font-size: 18px;
+    font-weight: 600;
+  }
 `;
 
-const Item = () => {
+const Item = ({ setShowCart }) => {
   return (
     <Card>
       <CardImage src={img} alt="roast chicken" />
@@ -115,17 +120,8 @@ const Item = () => {
         <h2 className="subtitle">by Kulina • Uptown Lunch</h2>
         <div className="price-container">
           Rp 35,0000
-          <AddButton>
-            ADD
-            <Add
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-            </Add>
+          <AddButton onClick={() => setShowCart(() => true)}>
+            ADD <i className="material-icons addButton">add</i>
           </AddButton>
         </div>
       </CardBody>

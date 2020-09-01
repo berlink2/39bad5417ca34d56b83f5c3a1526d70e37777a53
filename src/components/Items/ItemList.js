@@ -20,16 +20,16 @@ const Date = styled.h1`
 
 const items = new Array(10);
 
-const ItemList = () => {
+const ItemList = ({ setShowCart }) => {
   return (
     <ItemListContainer>
       <Date>Kamis. 13 Maret 2019</Date>
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
+      <Item setShowCart={setShowCart} />
+      <Item setShowCart={setShowCart} />
+      <Item setShowCart={setShowCart} />
+      <Item setShowCart={setShowCart} />
+      <Item setShowCart={setShowCart} />
+      <Item setShowCart={setShowCart} />
     </ItemListContainer>
   );
 };
