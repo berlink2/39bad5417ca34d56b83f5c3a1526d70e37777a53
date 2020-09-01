@@ -14,10 +14,10 @@ const HeaderContainer = styled.div`
   max-width: 400px;
 `;
 
-const Header = () => {
+const Header = ({ setShowModal }) => {
   return (
     <HeaderContainer>
-      <Address />
+      <Address setShowModal={setShowModal} />
       <Calendar />
     </HeaderContainer>
   );

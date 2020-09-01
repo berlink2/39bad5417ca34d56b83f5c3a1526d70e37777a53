@@ -29,11 +29,11 @@ const AddressSelect = styled.div`
   }
 `;
 
-const Address = () => {
+const Address = ({ setShowModal }) => {
   return (
     <Container>
       <i className="material-icons backButton">keyboard_backspace</i>
-      <AddressContainer>
+      <AddressContainer onClick={() => setShowModal(true)}>
         <span className="title">Alamat Pengantaran</span>
         <AddressSelect>
           Tokopedia Tower
