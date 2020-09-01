@@ -5,6 +5,7 @@ import Mealtime from "./components/Mealtime";
 import ItemList from "./components/Items/ItemList";
 import Cart from "./components/Cart";
 import ModalLocation from "./components/ModalLocation";
+
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,8 +33,6 @@ const App = () => {
     <AppContainer>
       <ThemeProvider theme={theme}>
         <ModalLocation setShowModal={setShowModal} showModal={showModal} />
-        {/* {showModal ? <ModalLocation setShowModal={setShowModal} /> : null} */}
-
         <Header setShowModal={setShowModal} />
         <Mealtime />
         <ItemList setShowCart={setShowCart} />

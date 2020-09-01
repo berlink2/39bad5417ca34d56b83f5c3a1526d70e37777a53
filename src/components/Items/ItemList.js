@@ -18,8 +18,6 @@ const Date = styled.h1`
   margin: 8px auto 16px 16px;
 `;
 
-const items = new Array(10);
-
 const ItemList = ({ setShowCart }) => {
   return (
     <ItemListContainer>
