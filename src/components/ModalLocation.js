@@ -15,7 +15,7 @@ const ModalLocation = ({ setShowModal, showModal }) => {
   return (
     <ModalAnimation>
       <Container className={showModal ? "open" : "closed"}>
-        <Background />
+        <Background onClick={() => setShowModal(false)} />
         <LocationModal>
           <Search>
             <div className="icon" onClick={() => setShowModal(false)}>
@@ -28,7 +28,7 @@ const ModalLocation = ({ setShowModal, showModal }) => {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search Location..."
             ></input>
-            {searchQuery.toLowerCase() === "kul" ? (
+            {searchQuery.length > 3 ? (
               <SearchResults>
                 <SearchResult>
                   <i className="material-icons resultIcon">location_on</i>

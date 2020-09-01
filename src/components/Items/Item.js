@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Card, CardBody, CardImage, AddButton } from "./styles/Item";
 
 const img = require("../../assets/images/roasted-chicken.jpg");
