@@ -2,20 +2,21 @@ import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 
 const ShowMealtime = styled.div`
+  margin-bottom: 64px;
   .visible {
     visibility: visible;
-    transition: all 200ms ease-in;
+    transition: all 300ms ease-in;
   }
 
   .hidden {
     visibility: hidden;
-    transition: all 200ms ease-out;
-    transform: translate(0, -100%);
+    transition: all 300ms ease-out;
+    transform: translate(0, -25%);
   }
 `;
 
 const MealtimeContainer = styled.div`
-  margin-top: 4px;
+  position: fixed;
   display: flex;
   flex-direction: row;
   max-width: 400px;
@@ -66,10 +67,10 @@ const Mealtime = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    // return () =>{
-    //     window.removeEventListener("scroll", handleScroll);
-    // }
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pos]);
 
   const handleScroll = () => {
     setPos(() => document.body.getBoundingClientRect().top);
